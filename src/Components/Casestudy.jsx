@@ -1,9 +1,9 @@
 import { ArrowRight, ChevronRight } from 'lucide-react'
 import React, { useState, useEffect, useRef } from 'react'
-import BackgroundImage from '../assets/Images/HeroCaseStudy.png'
-import Blog01 from '../assets/Images/Blog.png'
-import Blog02 from '../assets/Images/Blog2.png'
-import Article from '../assets/Images/Article.png'
+import BackgroundImage from '../assets/Images/heroCaseStudy.png'
+import Blog01 from '../assets/Images/blog.png'
+import Blog02 from '../assets/Images/blog2.png'
+import Article from '../assets/Images/article.png'
 
 const Casestudy = () => {
   const [isHovered, setIsHovered] = useState(false);
