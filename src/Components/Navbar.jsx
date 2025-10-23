@@ -141,9 +141,9 @@ const Navbar = () => {
             }`}
           >
             <nav className="flex flex-col gap-4 pb-6">
-              <div className="text-gray-300 hover:text-purple-400 cursor-pointer transition-all duration-300 py-2 border-b border-gray-700">
+             <Link to='/about'> <div className="text-gray-300 hover:text-purple-400 cursor-pointer transition-all duration-300 py-2 border-b border-gray-700">
                 About Us
-              </div>
+              </div></Link>
 
               {/* Mobile Dropdown */}
               <div>

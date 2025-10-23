@@ -100,11 +100,12 @@ const Careers = () => {
                 className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
               /> */}
 <iframe
-  src=""
+  src="https://www.youtube.com/embed/vZE0j_WCRvI"
   className="w-full h-[400px] md:h-[500px] object-cover"
   allow="autoplay; encrypted-media"
   frameBorder="0"
 ></iframe>
+
               
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/60 via-transparent to-cyan-900/40 group-hover:opacity-70 transition-opacity duration-500"></div>
