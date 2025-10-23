@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import BackgroundImage from '../assets/Images/studyhero.png'
 import Blog01 from '../assets/Images/blog1.png'
 import Blog02 from '../assets/Images/blog02.png'
-import Article from '../assets/Images/article.png'
+import Article from '../assets/Images/articlecase.png'
 
 const Casestudy = () => {
   const [isHovered, setIsHovered] = useState(false);
