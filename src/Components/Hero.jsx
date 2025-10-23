@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-import BackgroundImage from '../assets/Images/hero.png'
+import BackgroundImage from '../assets/Images/bghero.png'
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
 

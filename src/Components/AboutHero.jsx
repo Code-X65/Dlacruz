@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import BackgroundImage from '../assets/Images/hero.png'
+import BackgroundImage from '../assets/Images/bghero.png'
 import { ArrowRight, ChevronRight, ChevronRightIcon } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom'
 
