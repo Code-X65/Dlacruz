@@ -2,7 +2,7 @@ import { ArrowRight, ChevronRight } from 'lucide-react'
 import React, { useState, useEffect, useRef } from 'react'
 import BackgroundImage from '../assets/Images/studyhero.png'
 import Blog01 from '../assets/Images/blog1.png'
-import Blog02 from '../assets/Images/blog2.png'
+import Blog02 from '../assets/Images/blog02.png'
 import Article from '../assets/Images/article.png'
 
 const Casestudy = () => {
