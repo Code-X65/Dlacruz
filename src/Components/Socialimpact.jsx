@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Cpu, Zap, Target, ArrowRight } from 'lucide-react';
 
-const socialimpact = () => {
+const Socialimpact = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -137,4 +137,4 @@ const socialimpact = () => {
   );
 };
 
-export default socialimpact;
+export default Socialimpact;

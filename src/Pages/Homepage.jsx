@@ -4,7 +4,7 @@ import Casestudy from '../Components/casestudy'
 import SubscriptionForm01 from '../Components/SubscriptionForm01'
 import HelpOurClient from '../Components/HelpOurClient'
 import Careers from '../Components/Careers'
-import Socialimpact from '../Components/socialImpact'
+import Socialimpact from '../Components/Socialimpact'
 import HomeBanner from '../Components/HomeBanner'
 const Homepage = () => {
   return (
