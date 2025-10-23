@@ -1,6 +1,6 @@
 import React from 'react';
 import { Facebook, Linkedin, Youtube, Instagram } from 'lucide-react';
-import Logo from '../assets/Images/logo.png'
+import Logo from '../assets/Images/favicon.png'
 const Footer = () => {
   return (
     <div className="">
