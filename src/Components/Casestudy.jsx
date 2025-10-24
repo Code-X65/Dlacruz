@@ -64,7 +64,7 @@ const Casestudy = () => {
 
   return (
     <>
-      <div className=' bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 py-16 px-4 sm:px-6 lg:px-8'>
+      <div className='bg-gradient-to-br from-[#0d2438] via-[#1a3a52] to-[#0d2438] py-16 px-4 sm:px-6 lg:px-8'>
         {/* Desktop: Large Case Study Card */}
         <div 
           ref={caseStudyRef}
@@ -87,8 +87,8 @@ const Casestudy = () => {
               Leading fin-tech drives end to end transformation for profitable growth
             </p>
             <div className={`transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-70'}`}>
-              <button className="group relative inline-flex items-center gap-3 bg-black text-white px-8 py-4 md:px-6 md:py-3 rounded-lg font-semibold text-base md:text-lg shadow-lg hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-500 hover:scale-105 overflow-hidden">
-                <span className="absolute inset-0 bg-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+              <button className="group relative inline-flex items-center gap-3 bg-[#1a3a52] text-white px-8 py-4 md:px-6 md:py-3 rounded-lg font-semibold text-base md:text-lg shadow-lg hover:shadow-2xl hover:shadow-[#4a90b8]/50 transition-all duration-500 hover:scale-105 overflow-hidden">
+                <span className="absolute inset-0 bg-[#4a90b8] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                 <span className="relative z-10">Book a free Consultation</span>
                 <ArrowRight className="relative z-10 w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300" />
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></span>
@@ -132,9 +132,9 @@ const Casestudy = () => {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  currentSlide === index ? 'w-8 bg-white' : 'w-2 bg-gray-400'
-                }`}
+               className={`h-2 rounded-full transition-all duration-300 ${
+  currentSlide === index ? 'w-8 bg-[#6bb3d8]' : 'w-2 bg-gray-400'
+}`}
               />
             ))}
           </div>

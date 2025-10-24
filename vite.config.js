@@ -7,5 +7,8 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
-  base: '/Dlacruz/'
+  base: '/Dlacruz/',
+  server:{
+    port: 3000
+  }
 })

@@ -9,7 +9,7 @@ const Careers = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#0d2438] via-[#1a3a52] to-[#0d2438] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col-reverse md:flex-row gap-12 items-center">
           {/* Left Content */}
@@ -17,9 +17,9 @@ const Careers = () => {
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
           }`}>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-600/20 border border-purple-500/30 rounded-full mb-6">
-              <Briefcase className="w-4 h-4 text-purple-400" />
-              <span className="text-purple-400 text-sm font-semibold tracking-wide uppercase">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#4a90b8]/20 border border-[#4a90b8]/30 rounded-full mb-6">
+  <Briefcase className="w-4 h-4 text-[#6bb3d8]" />
+  <span className="text-[#6bb3d8] text-sm font-semibold tracking-wide uppercase">
                 Careers
               </span>
             </div>
@@ -28,10 +28,10 @@ const Careers = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Looking for your{' '}
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  next move?
-                </span>
-                <Sparkles className="absolute -top-6 -right-8 w-6 h-6 text-cyan-400 animate-pulse" />
+              <span className="bg-gradient-to-r from-[#4a90b8] via-[#6bb3d8] to-[#87ceeb] bg-clip-text text-transparent">
+    next move?
+      </span>
+      <Sparkles className="absolute -top-6 -right-8 w-6 h-6 text-[#87ceeb] animate-pulse" />
               </span>
             </h1>
 
@@ -45,20 +45,21 @@ const Careers = () => {
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 mb-8">
-              <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-4 hover:border-purple-500/50 transition-all duration-300">
-                <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-1">
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-4 hover:border-[#6bb3d8]/50 transition-all duration-300">
+  <div className="text-3xl font-bold bg-gradient-to-r from-[#6bb3d8] to-[#87ceeb] bg-clip-text text-transparent mb-1">
                   50+
                 </div>
                 <div className="text-gray-400 text-sm">Countries</div>
               </div>
-              <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-4 hover:border-cyan-500/50 transition-all duration-300">
-                <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1">
+              
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-4 hover:border-[#6bb3d8]/50 transition-all duration-300">
+  <div className="text-3xl font-bold bg-gradient-to-r from-[#6bb3d8] to-[#87ceeb] bg-clip-text text-transparent mb-1">
                   1000+
                 </div>
                 <div className="text-gray-400 text-sm">Employees</div>
               </div>
-              <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-4 hover:border-teal-500/50 transition-all duration-300">
-                <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent mb-1">
+             <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-4 hover:border-[#87ceeb]/50 transition-all duration-300">
+  <div className="text-3xl font-bold bg-gradient-to-r from-[#87ceeb] to-[#a8d8ea] bg-clip-text text-transparent mb-1">
                   100+
                 </div>
                 <div className="text-gray-400 text-sm">Positions</div>
@@ -66,22 +67,22 @@ const Careers = () => {
             </div>
 
             {/* CTA Button */}
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-full hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2">
+           <button className="group relative px-8 py-4 bg-gradient-to-r from-[#4a90b8] to-[#6bb3d8] text-white font-semibold rounded-full hover:shadow-2xl hover:shadow-[#4a90b8]/50 transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2">
               <span className="relative z-10 flex items-center gap-2">
                 Explore Careers
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#6bb3d8] to-[#4a90b8] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
 
             {/* Feature Pills */}
             <div className="flex flex-wrap gap-3 mt-8">
               <div className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-full text-gray-300 text-sm">
-                <Users className="w-4 h-4 text-purple-400" />
+                <Users className="w-4 h-4 text-[#6bb3d8]" />
                 Collaborative Culture
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-full text-gray-300 text-sm">
-                <Rocket className="w-4 h-4 text-cyan-400" />
+                <Rocket className="w-4 h-4 text-[#87ceeb]" />
                 Fast Growth
               </div>
             </div>
@@ -108,12 +109,12 @@ const Careers = () => {
 
               
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/60 via-transparent to-cyan-900/40 group-hover:opacity-70 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#1a3a52]/60 via-transparent to-[#4a90b8]/40 group-hover:opacity-70 transition-opacity duration-500"></div>
 
               {/* Floating Card 1 */}
               <div className="absolute top-8 right-8 bg-gray-900/90 backdrop-blur-md border border-gray-700 rounded-xl p-4 shadow-2xl animate-float">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4a90b8] to-[#6bb3d8] flex items-center justify-center">
                     <Users className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -126,7 +127,7 @@ const Careers = () => {
               {/* Floating Card 2 */}
               <div className="absolute bottom-8 left-8 bg-gray-900/90 backdrop-blur-md border border-gray-700 rounded-xl p-4 shadow-2xl animate-float-delayed">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-600 to-teal-600 flex items-center justify-center">
+                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#6bb3d8] to-[#87ceeb] flex items-center justify-center">
                     <Rocket className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -137,12 +138,12 @@ const Careers = () => {
               </div>
 
               {/* Decorative Gradient Blur */}
-              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-gradient-to-br from-purple-600 to-cyan-600 opacity-20 blur-3xl rounded-full"></div>
+             <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-gradient-to-br from-[#4a90b8] to-[#6bb3d8] opacity-20 blur-3xl rounded-full"></div>
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-purple-600 opacity-20 blur-3xl rounded-full animate-pulse"></div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-cyan-600 opacity-20 blur-3xl rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#4a90b8] opacity-20 blur-3xl rounded-full animate-pulse"></div>
+<div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#6bb3d8] opacity-20 blur-3xl rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
           </div>
         </div>
       </div>

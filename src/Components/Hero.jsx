@@ -14,8 +14,8 @@ const Hero = () => {
       <div id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden " style={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#4a90b8]/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#6bb3d8]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
         {/* Grid Pattern Overlay */}
@@ -25,7 +25,7 @@ const Hero = () => {
           <div className="hero-container max-w-5xl mx-auto text-center">
             {/* Main Heading with Animation */}
             <h2
-              className={`text-4xl md:text-5xl lg:text-7xl font-semibold text-purple-500 mb-6 md:mb-8 leading-tight transition-all duration-1000 ${
+              className={`text-4xl md:text-5xl lg:text-7xl font-semibold text-[#4a90b8] mb-6 md:mb-8 leading-tight transition-all duration-1000 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 -translate-y-10'
@@ -47,7 +47,7 @@ const Hero = () => {
               }`}
             >
               Game-changing work. People-powered growth. At{' '}
-              <span className="text-purple-400 font-semibold">Delacruz</span>, we
+              <span className="text-[#6bb3d8] font-semibold">Delacruz</span>, we
               help you think bigger, build stronger, and expand opportunity for
               all.
             </p>
@@ -60,9 +60,9 @@ const Hero = () => {
                   : 'opacity-0 translate-y-10'
               }`}
             >
-             <button className="group relative inline-flex items-center gap-3 bg-black text-white px-8 py-4 md:px-10 md:py-5 rounded-lg font-semibold text-base md:text-lg shadow-lg hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-500 hover:scale-105 overflow-hidden">
+             <button className="group relative inline-flex items-center gap-3 bg-[#1a3a52] text-white px-8 py-4 md:px-10 md:py-5 rounded-lg font-semibold text-base md:text-lg shadow-lg hover:shadow-2xl hover:shadow-[#4a90b8]/50 transition-all duration-500 hover:scale-105 overflow-hidden">
                 {/* Button Background Animation */}
-                <span className="absolute inset-0 bg-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                <span className="absolute inset-0 bg-[#4a90b8] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                 
                 <span className="relative z-10">Book a free Consultation</span>
                 

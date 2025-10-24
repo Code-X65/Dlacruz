@@ -14,7 +14,7 @@ const Socialimpact = () => {
       title: 'Industry Expertise',
       description: 'Deep industry insights and knowledge based on 15 years of CEO counselling.',
       image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop',
-      gradient: 'from-purple-600 to-blue-600',
+      gradient: 'from-[#4a90b8] to-[#6bb3d8]',
       delay: '0ms'
     },
     {
@@ -22,7 +22,7 @@ const Socialimpact = () => {
       title: 'Capabilities',
       description: 'Practical experience and know-how on transforming how organizations work.',
       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop',
-      gradient: 'from-blue-600 to-cyan-600',
+      gradient: 'from-[#6bb3d8] to-[#87ceeb]',
       delay: '200ms'
     },
     {
@@ -30,27 +30,28 @@ const Socialimpact = () => {
       title: 'Tech & AI',
       description: 'We help clients unlock the power of AI at scale, modernize technology delivery, and build new businesses to drive growth.',
       image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop',
-      gradient: 'from-cyan-600 to-teal-600',
+      gradient: 'from-[#87ceeb] to-[#a8d8ea]',
       delay: '400ms'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#0d2438] via-[#1a3a52] to-[#0d2438] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className={`text-left md:text-center mb-16 transition-all duration-1000 transform ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
         }`}>
-          <p className="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">
-            How We Help Clients
+          <p className="text-[#6bb3d8] text-sm font-semibold tracking-widest uppercase mb-4">
+            Social Impact
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Sharing our best to
             <br />
-            <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-             help more people Succeed.
-            </span>
+            <span className="bg-gradient-to-r from-[#4a90b8] via-[#6bb3d8] to-[#87ceeb] bg-clip-text text-transparent">
+ help more people Succeed.
+</span>
+
           </h1>
         </div>
 
@@ -89,7 +90,7 @@ const Socialimpact = () => {
 
               {/* Content Section */}
               <div className="p-8">
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 group-hover:bg-clip-text transition-all duration-300">
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#4a90b8] group-hover:to-[#6bb3d8] group-hover:bg-clip-text transition-all duration-300">
                   {service.title}
                 </h3>
                 <p className="text-gray-400 text-base leading-relaxed mb-6">
@@ -97,7 +98,7 @@ const Socialimpact = () => {
                 </p>
 
                 {/* Learn More Link */}
-                <div className="flex items-center text-purple-400 group-hover:text-cyan-400 transition-colors duration-300 cursor-pointer">
+                <div className="flex items-center text-[#6bb3d8] group-hover:text-[#87ceeb] transition-colors duration-300 cursor-pointer">
                   <span className="text-sm font-semibold mr-2">Learn more</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
                 </div>
@@ -113,12 +114,12 @@ const Socialimpact = () => {
         <div className={`text-center mt-16 transition-all duration-1000 transform ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`} style={{ transitionDelay: '600ms' }}>
-          <button className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-full hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105">
+         <button className="group relative px-8 py-4 bg-gradient-to-r from-[#4a90b8] to-[#6bb3d8] text-white font-semibold rounded-full hover:shadow-2xl hover:shadow-[#4a90b8]/50 transition-all duration-300 transform hover:scale-105">
             <span className="relative z-10 flex items-center gap-2">
               Explore All Services
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+           <div className="absolute inset-0 bg-gradient-to-r from-[#6bb3d8] to-[#4a90b8] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
         </div> */}
       </div>
