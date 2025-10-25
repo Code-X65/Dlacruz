@@ -6,7 +6,10 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+const closeMobileMenu = () => {
+  setIsMobileMenuOpen(false);
+  setIsDropdownOpen(false);
+};
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -20,14 +23,14 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const services = [
-    'Web Development',
-    'Mobile Apps',
-    'Cloud Solutions',
-    'AI & Machine Learning',
-    'Consulting Services',
-    'Digital Marketing'
-  ];
+const services = [
+  { name: 'Technology & IT Services', slug: 'technology-it-services' },
+  { name: 'Cyber Security Consultation', slug: 'cyber-security-consultation' },
+  { name: 'Business Management Consulting', slug: 'business-management-consulting' },
+  { name: 'Marketing, Branding & Advertising', slug: 'marketing-branding-advertising' },
+  { name: 'Software Innovation', slug: 'software-innovation' },
+  { name: 'Digital Marketing', slug: 'digital-marketing' }
+]
 
   return (
     <>
@@ -88,36 +91,48 @@ const Navbar = () => {
                     }`}
                   >
                     <div className="py-2">
-                      {services.map((service, index) => (
-                        <div
-                          key={index}
-                          className="px-4 py-3 hover:bg-[#4a90b8]/20 hover:text-[#6bb3d8] cursor-pointer transition-all duration-200 text-gray-300"
-                          style={{
-                            animationDelay: `${index * 50}ms`,
-                            animation: isDropdownOpen
-                              ? 'slideInLeft 0.3s ease-out forwards'
-                              : 'none',
-                          }}
-                        >
-                          {service}
-                        </div>
-                      ))}
+                     {services.map((service, index) => (
+  <Link 
+    to={`/services/${service.slug}`} 
+    key={index}
+  >
+    <div
+      className="px-4 py-3 hover:bg-[#4a90b8]/20 hover:text-[#6bb3d8] cursor-pointer transition-all duration-200 text-gray-300"
+      style={{
+        animationDelay: `${index * 50}ms`,
+        animation: isDropdownOpen ? 'slideInLeft 0.3s ease-out forwards' : 'none',
+      }}
+    >
+      {service.name}
+    </div>
+  </Link>
+))}
                     </div>
                   </div>
                 </li>
 
-                <li className="hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 hover:scale-105 list-none">
-                  Case Studies
-                </li>
-                <li className="hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 hover:scale-105 list-none">
-                  Careers
-                </li>
-                <li className="hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 hover:scale-105 list-none">
-                  Location
-                </li>
-                <li className="hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 hover:scale-105 list-none">
-                  Insights
-                </li>
+<Link to='/case-studies'>
+  <li className="hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 hover:scale-105 list-none">
+    Case Studies
+  </li>
+</Link>
+                <Link to='/careers'>
+  <li className="hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 hover:scale-105 list-none">
+    Careers
+  </li>
+</Link>
+
+<Link to='/location'>
+  <li className="hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 hover:scale-105 list-none">
+    Location
+  </li>
+</Link>
+
+<Link to='/insights'>
+  <li className="hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 hover:scale-105 list-none">
+    Insights
+  </li>
+</Link>
               </nav>
 
               <div className="bg-[#4a90b8] hover:bg-[#6bb3d8] text-white px-6 py-2.5 rounded-lg cursor-pointer font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#4a90b8]/50">
@@ -141,9 +156,11 @@ const Navbar = () => {
             }`}
           >
             <nav className="flex flex-col gap-4 pb-6">
-             <Link to='/about'><div className="text-gray-300 hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 py-2 border-b border-gray-700">
-                About Us
-              </div></Link>
+            <Link to='/about' onClick={closeMobileMenu}>
+  <div className="text-gray-300 hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 py-2 border-b border-gray-700">
+    About Us
+  </div>
+</Link>
 
               {/* Mobile Dropdown */}
               <div>
@@ -163,29 +180,47 @@ const Navbar = () => {
                     isDropdownOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  {services.map((service, index) => (
-                    <div
-                      key={index}
-                      className="pl-4 py-2 text-gray-400 hover:text-[#6bb3d8] cursor-pointer transition-all duration-200"
-                    >
-                      {service}
-                    </div>
-                  ))}
+                 {services.map((service, index) => (
+  <Link 
+    to={`/services/${service.slug}`} 
+    key={index} 
+    onClick={closeMobileMenu}
+  >
+    <div className="pl-4 py-2 text-gray-400 hover:text-[#6bb3d8] cursor-pointer transition-all duration-200">
+      {service.name}
+    </div>
+  </Link>
+))}
                 </div>
               </div>
 
-              <div className="text-gray-300 hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 py-2 border-b border-gray-700">
-                Case Studies
-              </div>
-              <div className="text-gray-300 hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 py-2 border-b border-gray-700">
-                Careers
-              </div>
-              <div className="text-gray-300 hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 py-2 border-b border-gray-700">
-                Location
-              </div>
-              <div className="text-gray-300 hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 py-2 border-b border-gray-700">
-                Insights
-              </div>
+    
+
+<Link to='/case-studies' onClick={closeMobileMenu}>
+  <div className="text-gray-300 hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 py-2 border-b border-gray-700">
+    Case Studies
+  </div>
+</Link>
+
+<Link to='/careers' onClick={closeMobileMenu}>
+  <div className="text-gray-300 hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 py-2 border-b border-gray-700">
+    Careers
+  </div>
+</Link>
+
+
+<Link to='/location' onClick={closeMobileMenu}>
+  <div className="text-gray-300 hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 py-2 border-b border-gray-700">
+    Location
+  </div>
+</Link>
+
+
+<Link to='/insights' onClick={closeMobileMenu}>
+  <div className="text-gray-300 hover:text-[#6bb3d8] cursor-pointer transition-all duration-300 py-2 border-b border-gray-700">
+    Insights
+  </div>
+</Link>
 
              <div className="bg-[#4a90b8] hover:bg-[#6bb3d8] text-white px-6 py-3 rounded-lg cursor-pointer font-medium transition-all duration-300 text-center mt-2">
                 Subscribe

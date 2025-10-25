@@ -4,6 +4,10 @@ import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
 import Homepage from './Pages/Homepage'
 import AboutPage from './Pages/AboutPage'
+import NotFound from './Components/Notfound'
+import ServicesShowcase from './Components/ServicesShowcase'
+import ExploreSolutions from './Components/ExploreSolutions'
+import ServicePage from './Pages/ServicePage'
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -26,6 +30,11 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<AboutPage />} />
+           <Route path="/services/:serviceName" element={<ServicePage />} />
+          {/* <Route path='/Services_Showcase' element={<ServicesShowcase />}/>
+          <Route path='/Explore_Solutions' element={<ExploreSolutions />}/> */}
+          <Route path="*" element={<NotFound />} />
+
         </Routes>
       </main>
 

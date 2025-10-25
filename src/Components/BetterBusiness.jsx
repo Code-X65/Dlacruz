@@ -8,11 +8,11 @@ const [textIndex, setTextIndex] = useState(0);
 const [showCursor, setShowCursor] = useState('title');
 
 const title = 'Making Business Better';
-const fullText = `In today's rapidly evolving corporate world, having a solid business strategy is no longer optional—it's essential. The recent pandemic, coupled with increasing regulatory demands and new reporting standards, has made it clear that businesses must adopt a digital-first approach and address operational gaps swiftly.
+const fullText = `Innosphare Consulting FEZ LLC is Dubai based consultancy firm helping organisations transfom though technology, innovation, and stategic advisory.
 
-Yet, many organizations struggle to manage this transformation on their own. That's where we come in. At Affility, we take the time to understand your current position, evaluate your challenges, and guide you toward the most effective solutions—while supporting you every step of the way. This partnership empowers you to move forward with confidence and achieve your goals.
+Registerd under a wide range of technology, consultancy, and marketing activities, innosphere is uniquely positioned to act as a 360 degress partner for enterprrises, SMEs, and goverment organization in the UAE.
 
-Founded in 2017 by a team of seasoned global professionals from diverse consulting backgrounds, Affility delivers comprehensive digital transformation, business transformation, and advisory services with precision and integrity—always focused on creating impactful, results-driven solutions.`;
+Our Multidiciplinary approach -- covering digital transformation, cyber security, marketing, management consulting, and software innovation -- ensure clients not only meet today's challenges but also align with Dubai D33, UAE AI Strategy 2031, and the Digital Government Strategy 2025`;
 
 useEffect(() => {
   if (titleIndex < title.length) {
