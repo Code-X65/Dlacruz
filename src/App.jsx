@@ -4,7 +4,7 @@ import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
 import Homepage from './Pages/Homepage'
 import AboutPage from './Pages/AboutPage'
-import NotFound from './Components/Notfound'
+import NotFound from './Components/NotFound'
 import ServicesShowcase from './Components/ServicesShowcase'
 import ExploreSolutions from './Components/ExploreSolutions'
 import ServicePage from './Pages/ServicePage'
@@ -22,13 +22,13 @@ const ScrollToTop = () => {
 
 const App = () => {
   return (
-    <Router basename="/Dlacruz">
+    <Router basename="/Dlacruz/">
       <ScrollToTop />
       <Navbar />
 
       <main style={{ minHeight: '80vh' }}>
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route index element={<Homepage />} />
           <Route path="/about" element={<AboutPage />} />
            <Route path="/services/:serviceName" element={<ServicePage />} />
           {/* <Route path='/Services_Showcase' element={<ServicesShowcase />}/>
