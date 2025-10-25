@@ -6,6 +6,7 @@ import TechnologyITServices from '../Components/ServicesShowcase'
 import CyberSecurintyConsultation from '../Components/CyberSecurityConsultation'
 import BusinessManagementConsulting from '../Components/BusinessManagementConsulting'
 import MarketingBrandingAdvertising from '../Components/MarketingBrandingAdvertising'
+
 import SoftwareInnovationLabs from '../Components/SoftwareInnovationLabs'
 const ServicePage = () => {
   const { serviceName } = useParams()

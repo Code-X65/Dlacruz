@@ -1,175 +1,165 @@
 import React, { useState } from 'react'
-import { Briefcase, Target, TrendingUp, Users, Lightbulb, BarChart3, Zap, CheckCircle, ArrowRight, Clock, Award, Globe, X, ChevronRight } from 'lucide-react'
+import { Megaphone, Palette, TrendingUp, Video, BarChart2, Sparkles, Target, Users, Award, Zap, Eye, Heart, Star, ArrowRight, Play, X } from 'lucide-react'
 
-const BusinessManagementConsulting = () => {
-  const [showConsultationForm, setShowConsultationForm] = useState(false)
-  const [hoveredService, setHoveredService] = useState(null)
+const MarketingBrandingAdvertising = () => {
+  const [activeService, setActiveService] = useState(0)
+  const [showVideo, setShowVideo] = useState(false)
 
   const services = [
     {
-      icon: <Target className="w-12 h-12" />,
-      title: "Corporate Strategy & Project Feasibility",
-      description: "Shape your business future with data-driven strategies and comprehensive feasibility analysis. We help you make confident decisions about new ventures, market expansion, and strategic initiatives.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop",
-      features: [
-        "Strategic planning and roadmap development",
-        "Market opportunity assessment and sizing",
-        "Financial modeling and ROI projections",
-        "Risk analysis and mitigation planning"
+      icon: <Megaphone className="w-10 h-10" />,
+      title: "End-to-End Advertising Campaigns",
+      subtitle: "Digital + Traditional",
+      description: "Launch campaigns that captivate audiences and drive conversions. We blend digital innovation with traditional media expertise to create integrated marketing experiences that deliver measurable results.",
+      image: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=800&auto=format&fit=crop",
+      capabilities: [
+        "Multi-channel campaign strategy and execution",
+        "Media planning and buying across all platforms",
+        "Creative concept development and production",
+        "Campaign performance tracking and optimization"
       ],
-      impact: "95% of our strategy projects achieve their KPIs within 18 months",
-      color: "from-blue-500 to-cyan-500"
+      results: { reach: "5M+", engagement: "+250%", roi: "450%" }
     },
     {
-      icon: <Globe className="w-12 h-12" />,
-      title: "Market Entry Analysis for UAE and GCC",
-      description: "Navigate the Gulf market with confidence. Our localized expertise helps international firms and SMEs establish successful operations in the UAE and GCC region.",
-      image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&auto=format&fit=crop",
-      features: [
-        "Regulatory and licensing requirements analysis",
-        "Competitive landscape mapping",
-        "Go-to-market strategy development",
-        "Local partnership and network facilitation"
+      icon: <Target className="w-10 h-10" />,
+      title: "Digital Marketing Excellence",
+      subtitle: "SEO, SEM, PPC, Programmatic Ads",
+      description: "Dominate search rankings and paid channels with data-driven digital marketing strategies. Our performance marketing approach ensures every dirham spent contributes to your bottom line.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
+      capabilities: [
+        "Search engine optimization (SEO) and technical audits",
+        "Pay-per-click (PPC) campaign management",
+        "Programmatic advertising and audience targeting",
+        "Social media advertising and influencer partnerships"
       ],
-      impact: "Helped 50+ companies successfully enter UAE market",
-      color: "from-purple-500 to-pink-500"
+      results: { traffic: "+320%", leads: "+185%", cpa: "-40%" }
     },
     {
-      icon: <TrendingUp className="w-12 h-12" />,
-      title: "Process Reengineering & Workforce Optimization",
-      description: "Transform operational efficiency through intelligent process redesign and workforce alignment. We eliminate bottlenecks, reduce costs, and enhance productivity across your organization.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop",
-      features: [
-        "End-to-end process mapping and analysis",
-        "Automation opportunity identification",
-        "Workforce planning and optimization",
-        "Change management and implementation support"
+      icon: <Palette className="w-10 h-10" />,
+      title: "Brand Identity & Reputation Management",
+      subtitle: "Build Trust, Inspire Loyalty",
+      description: "Craft distinctive brand identities that resonate with your target market. We help businesses establish powerful brand presence and manage their reputation across all touchpoints.",
+      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&auto=format&fit=crop",
+      capabilities: [
+        "Brand strategy and positioning frameworks",
+        "Visual identity design and brand guidelines",
+        "Reputation monitoring and crisis management",
+        "Brand storytelling and messaging architecture"
       ],
-      impact: "Average 40% improvement in operational efficiency",
-      color: "from-green-500 to-teal-500"
+      results: { awareness: "+200%", sentiment: "92%", recall: "+165%" }
     },
     {
-      icon: <Users className="w-12 h-12" />,
-      title: "CRM & WFM Integration for Measurable CX Improvement",
-      description: "Elevate customer experience through seamless integration of Customer Relationship Management and Workforce Management systems. Turn customer data into actionable insights and improved service delivery.",
-      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop",
-      features: [
-        "CRM system selection and implementation",
-        "Workforce management optimization",
-        "Customer journey mapping and enhancement",
-        "Performance metrics and KPI dashboards"
+      icon: <Video className="w-10 h-10" />,
+      title: "Creative Content Studio",
+      subtitle: "Arabic & English Campaigns",
+      description: "Produce engaging content that tells your brand story across cultures. Our bilingual creative studio specializes in culturally-relevant campaigns that connect with UAE and GCC audiences.",
+      image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&auto=format&fit=crop",
+      capabilities: [
+        "Video production and motion graphics",
+        "Photography and visual asset creation",
+        "Copywriting in Arabic and English",
+        "Social media content calendars and management"
       ],
-      impact: "Clients see 60% increase in customer satisfaction scores",
-      color: "from-orange-500 to-red-500"
+      results: { videos: "500+", engagement: "+280%", shares: "+340%" }
     },
     {
-      icon: <Briefcase className="w-12 h-12" />,
-      title: "Project Development Consulting and PMO Support",
-      description: "Execute complex projects with precision and confidence. Our Project Management Office services provide the structure, methodology, and expertise to deliver on time and within budget.",
-      image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&auto=format&fit=crop",
-      features: [
-        "PMO setup and governance frameworks",
-        "Project portfolio management",
-        "Agile and traditional methodology implementation",
-        "Project rescue and turnaround services"
+      icon: <BarChart2 className="w-10 h-10" />,
+      title: "MarTech Implementation",
+      subtitle: "CRM, Automation, Analytics",
+      description: "Transform marketing operations with cutting-edge technology. We implement and optimize marketing automation platforms, CRM systems, and analytics tools for data-driven decision making.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
+      capabilities: [
+        "Marketing automation platform setup and optimization",
+        "CRM integration and workflow automation",
+        "Advanced analytics and attribution modeling",
+        "Customer data platform (CDP) implementation"
       ],
-      impact: "98% on-time project delivery rate",
-      color: "from-indigo-500 to-purple-500"
+      results: { automation: "85%", efficiency: "+190%", insights: "Real-time" }
     }
   ]
 
-  const valuePropositions = [
+  const marketOpportunities = [
     {
-      icon: <Lightbulb className="w-10 h-10" />,
-      title: "Dubai D33 Alignment",
-      description: "Our consulting frameworks are specifically designed to align with Dubai's D33 economic agenda, helping businesses contribute to and benefit from the emirate's growth strategy.",
-      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&auto=format&fit=crop"
+      icon: <Sparkles className="w-8 h-8" />,
+      title: "Creative-Only Focus Gap",
+      description: "Most competitors focus on creative execution. We integrate strategy, Martech, and analytics for measurable ROI."
     },
     {
-      icon: <Zap className="w-10 h-10" />,
-      title: "Value-Driven Digital Packs",
-      description: "Pre-packaged consulting solutions that combine strategy, technology, and implementation—designed for SMEs who need enterprise-grade consulting at accessible price points.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop"
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: "Performance-Driven",
+      description: "Campaigns backed by data science and continuous optimization, not just pretty visuals."
     },
     {
-      icon: <Award className="w-10 h-10" />,
-      title: "Structured Methodology",
-      description: "Proven frameworks adapted from global best practices but customized for UAE market dynamics, ensuring practical, implementable solutions.",
-      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&auto=format&fit=crop"
+      icon: <Award className="w-8 h-8" />,
+      title: "Bilingual Excellence",
+      description: "Native-level Arabic and English capabilities for authentic GCC market communication."
     }
   ]
 
-  const stats = [
-    { number: "150+", label: "Projects Delivered", icon: <Briefcase className="w-8 h-8" /> },
-    { number: "95%", label: "Client Retention", icon: <Users className="w-8 h-8" /> },
-    { number: "40%", label: "Avg. Efficiency Gain", icon: <TrendingUp className="w-8 h-8" /> },
-    { number: "12 Weeks", label: "Avg. Implementation", icon: <Clock className="w-8 h-8" /> }
+  const achievements = [
+    { icon: <Eye />, number: "50M+", label: "Impressions Delivered" },
+    { icon: <Heart />, number: "250%", label: "Avg. Engagement Increase" },
+    { icon: <Star />, number: "4.8/5", label: "Client Satisfaction" },
+    { icon: <Zap />, number: "180+", label: "Campaigns Launched" }
   ]
 
   return (
-    <div className="bg-gradient-to-b from-white via-gray-50 to-white">
-      {/* Hero Section with Parallax Image */}
-      <div className="relative overflow-hidden min-h-screen flex items-center">
+    <div className="bg-white">
+      {/* Hero Section with Video */}
+      <div className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1600&auto=format&fit=crop"
-            alt="Business Strategy"
+            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&auto=format&fit=crop"
+            alt="Marketing Team"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0d2438]/95 via-[#1a3a52]/90 to-[#2d4a62]/95"></div>
-          <div className="absolute inset-0">
-            <div className="absolute top-20 left-20 w-72 h-72 bg-[#4a90b8] rounded-full opacity-20 blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#6bb3d8] rounded-full opacity-20 blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0d2438]/95 via-[#1a3a52]/90 to-[#0d2438]/95"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 mb-8">
-                <Briefcase className="w-5 h-5 text-[#6bb3d8]" />
-                <span className="text-white font-semibold">License: Management Consultancies, Consultancy Project Development</span>
-              </div>
-              
-              <h1 className="text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                Business & Management
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#6bb3d8] via-white to-[#6bb3d8] mt-2">
-                  Consulting
-                </span>
-              </h1>
-              
-              <p className="text-xl lg:text-2xl text-gray-200 mb-12 leading-relaxed">
-                Strategic guidance that transforms vision into reality. From corporate strategy to project execution, we help businesses thrive in the dynamic UAE market.
-              </p>
+        <div className="relative z-10 h-full flex items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#4a90b8]/20 to-[#6bb3d8]/20 backdrop-blur-sm px-6 py-3 rounded-full border border-[#4a90b8]/30 mb-6">
+                  <Megaphone className="w-5 h-5 text-[#6bb3d8]" />
+                  <span className="text-[#6bb3d8] font-semibold">License: Advertising, Web Portals, IT Services</span>
+                </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button onClick={() => setShowConsultationForm(true)} className="group px-8 py-4 bg-gradient-to-r from-[#4a90b8] to-[#6bb3d8] hover:from-[#6bb3d8] hover:to-[#4a90b8] text-white rounded-xl font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-3">
-                  Schedule Free Consultation
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/30 hover:bg-white/20 text-white rounded-xl font-semibold text-lg transition-all duration-300">
-                  Download Service Brochure
-                </button>
-              </div>
-            </div>
+                <h1 className="text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                  Marketing, Branding
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#6bb3d8] via-[#4a90b8] to-[#6bb3d8] animate-gradient">
+                    & Advertising
+                  </span>
+                </h1>
 
-            {/* Hero Image Cards */}
-            <div className="hidden lg:block relative h-96">
-              <div className="absolute top-0 right-0 w-72 h-72 rounded-2xl overflow-hidden shadow-2xl transform rotate-6 hover:rotate-3 transition-transform duration-500">
-                <img 
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop"
-                  alt="Strategy Session"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#4a90b8]/80 to-transparent"></div>
+                <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+                  Transform your brand into a market leader with integrated campaigns that blend creativity, technology, and measurable results.
+                </p>
+
+                <div className="flex flex-wrap gap-4">
+                  <button className="group px-8 py-4 bg-gradient-to-r from-[#4a90b8] to-[#6bb3d8] hover:from-[#6bb3d8] hover:to-[#4a90b8] text-white rounded-xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 flex items-center gap-3">
+                    Start Your Campaign
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                  <button onClick={() => setShowVideo(true)} className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20 text-white rounded-xl font-semibold transition-all duration-300 flex items-center gap-3">
+                    <Play className="w-5 h-5" />
+                    Watch Our Work
+                  </button>
+                </div>
               </div>
-              <div className="absolute bottom-0 left-0 w-64 h-64 rounded-2xl overflow-hidden shadow-2xl transform -rotate-6 hover:-rotate-3 transition-transform duration-500">
-                <img 
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop"
-                  alt="Team Meeting"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#6bb3d8]/80 to-transparent"></div>
+
+              <div className="relative hidden lg:block">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                  <img 
+                    src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&auto=format&fit=crop"
+                    alt="Creative Campaign"
+                    className="w-full h-96 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <p className="text-white text-2xl font-bold">Award-Winning Campaigns</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -177,107 +167,127 @@ const BusinessManagementConsulting = () => {
 
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
           </svg>
         </div>
       </div>
 
-      {/* Stats Section */}
-      <div className="py-16 -mt-1">
+      {/* Achievements Bar */}
+      <div className="py-16 bg-gradient-to-r from-[#0d2438] to-[#1a3a52] -mt-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <div key={index} className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-100 overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#4a90b8]/10 to-[#6bb3d8]/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
-                <div className="relative z-10">
-                  <div className="text-[#4a90b8] mb-4">{stat.icon}</div>
-                  <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#4a90b8] to-[#6bb3d8] mb-2">
-                    {stat.number}
-                  </p>
-                  <p className="text-gray-600 font-medium">{stat.label}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {achievements.map((achievement, index) => (
+              <div key={index} className="text-center group cursor-pointer">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#4a90b8] to-[#6bb3d8] rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                  {React.cloneElement(achievement.icon, { className: "w-8 h-8 text-white" })}
                 </div>
+                <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6bb3d8] to-white mb-2">
+                  {achievement.number}
+                </p>
+                <p className="text-gray-300 font-medium">{achievement.label}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Services Section with Images */}
-      <div className="py-20">
+      {/* Services Showcase */}
+      <div className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Our Consulting Services
+            <h2 className="text-5xl font-bold text-gray-900 mb-4">
+              Our Service Arsenal
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive management solutions tailored for the UAE business landscape
+              Comprehensive marketing solutions that drive growth and build lasting brand equity
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Service Tabs */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
             {services.map((service, index) => (
-              <div
+              <button
                 key={index}
-                onMouseEnter={() => setHoveredService(index)}
-                onMouseLeave={() => setHoveredService(null)}
-                className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
+                onClick={() => setActiveService(index)}
+                className={`flex items-center gap-3 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                  activeService === index
+                    ? 'bg-gradient-to-r from-[#4a90b8] to-[#6bb3d8] text-white shadow-xl scale-105'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
               >
-                {/* Background Image */}
-                <div className="absolute inset-0 overflow-hidden">
-                  <img 
-                    src={service.image}
-                    alt={service.title}
-                    className={`w-full h-full object-cover transition-transform duration-700 ${
-                      hoveredService === index ? 'scale-110' : 'scale-100'
-                    }`}
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/95 to-gray-900/70 transition-opacity duration-500 ${
-                    hoveredService === index ? 'opacity-95' : 'opacity-90'
-                  }`}></div>
-                </div>
+                {React.cloneElement(service.icon, { className: "w-5 h-5" })}
+                <span className="hidden sm:inline">{service.title.split(' ')[0]}</span>
+              </button>
+            ))}
+          </div>
 
-                {/* Content */}
-                <div className="relative z-10 p-8">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl`}>
-                    {React.cloneElement(service.icon, { className: "w-8 h-8 text-white" })}
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-white mb-3 leading-tight">
-                    {service.title}
-                  </h3>
-
-                  <p className="text-gray-300 leading-relaxed mb-6">
-                    {service.description}
-                  </p>
-
-                  <div className="space-y-2 mb-6">
-                    {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-[#6bb3d8] flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-300 text-sm">{feature}</span>
+          {/* Active Service Display */}
+          <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl overflow-hidden shadow-2xl">
+            <div className="grid lg:grid-cols-2 gap-0">
+              {/* Image Side */}
+              <div className="relative h-96 lg:h-auto">
+                <img 
+                  src={services[activeService].image}
+                  alt={services[activeService].title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                
+                {/* Results Overlay */}
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="grid grid-cols-3 gap-4">
+                    {Object.entries(services[activeService].results).map(([key, value], idx) => (
+                      <div key={idx} className="bg-white/20 backdrop-blur-md rounded-lg p-4 border border-white/30">
+                        <p className="text-white/80 text-xs uppercase mb-1">{key}</p>
+                        <p className="text-white text-2xl font-bold">{value}</p>
                       </div>
                     ))}
                   </div>
-
-                  <div className="flex items-center justify-between pt-6 border-t border-white/10">
-                    <div className="flex items-center gap-2">
-                      <BarChart3 className="w-5 h-5 text-[#6bb3d8]" />
-                      <span className="text-[#6bb3d8] text-sm font-semibold">{service.impact}</span>
-                    </div>
-                    <ChevronRight className="w-6 h-6 text-white group-hover:translate-x-1 transition-transform" />
-                  </div>
                 </div>
               </div>
-            ))}
+
+              {/* Content Side */}
+              <div className="p-8 lg:p-12">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#4a90b8] to-[#6bb3d8] rounded-2xl flex items-center justify-center shadow-lg">
+                    {services[activeService].icon}
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-gray-900 leading-tight">
+                      {services[activeService].title}
+                    </h3>
+                    <p className="text-[#4a90b8] font-semibold text-lg">
+                      {services[activeService].subtitle}
+                    </p>
+                  </div>
+                </div>
+
+                <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                  {services[activeService].description}
+                </p>
+
+                <h4 className="font-bold text-gray-900 mb-4 text-lg">Core Capabilities:</h4>
+                <div className="space-y-3">
+                  {services[activeService].capabilities.map((capability, idx) => (
+                    <div key={idx} className="flex items-start gap-3 group">
+                      <div className="w-6 h-6 bg-gradient-to-br from-[#4a90b8] to-[#6bb3d8] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <div className="w-2 h-2 bg-white rounded-full"></div>
+                      </div>
+                      <span className="text-gray-700 leading-relaxed">{capability}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Market Opportunity Section with Visual Cards */}
-      <div className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-[#4a90b8] rounded-full opacity-10 blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#6bb3d8] rounded-full opacity-10 blur-3xl"></div>
+      {/* Market Opportunity Section with Images */}
+      <div className="py-20 bg-gradient-to-br from-[#0d2438] to-[#1a3a52] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#6bb3d8] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#4a90b8] rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -286,90 +296,79 @@ const BusinessManagementConsulting = () => {
               Market Opportunity
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Mid-market firms and SMEs lack access to affordable, structured management consulting, creating space for value-driven digital packs aligned to Dubai D33.
+              Most competitors focus on creative-only execution. We integrate strategy, MarTech + analytics for measurable ROI.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {valuePropositions.map((prop, index) => (
-              <div key={index} className="group relative rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
-                <div className="absolute inset-0">
-                  <img 
-                    src={prop.image}
-                    alt={prop.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d2438] via-[#0d2438]/90 to-[#0d2438]/70"></div>
-                </div>
-
-                <div className="relative z-10 p-8 h-full flex flex-col">
-                  <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gradient-to-br group-hover:from-[#4a90b8] group-hover:to-[#6bb3d8] transition-all duration-300">
-                    {React.cloneElement(prop.icon, { className: "w-8 h-8 text-white" })}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {marketOpportunities.map((opportunity, index) => (
+              <div key={index} className="group">
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 h-full">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#4a90b8] to-[#6bb3d8] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-xl">
+                    {opportunity.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{prop.title}</h3>
-                  <p className="text-gray-300 leading-relaxed flex-grow">{prop.description}</p>
-                  <div className="mt-6 flex items-center gap-2 text-[#6bb3d8] font-semibold group-hover:gap-4 transition-all">
-                    Learn More <ArrowRight className="w-5 h-5" />
-                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">{opportunity.title}</h3>
+                  <p className="text-gray-300 leading-relaxed">{opportunity.description}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Additional Visual Elements */}
-          <div className="grid md:grid-cols-2 gap-6 mt-12">
-            <div className="relative rounded-2xl overflow-hidden h-64 group">
+          {/* Visual Showcase Grid */}
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="relative rounded-2xl overflow-hidden h-64 group cursor-pointer">
               <img 
-                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&auto=format&fit=crop"
-                alt="Consulting Session"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop"
+                alt="Team Collaboration"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-              <div className="absolute bottom-6 left-6">
-                <p className="text-white text-2xl font-bold mb-2">Expert Guidance</p>
-                <p className="text-gray-300">15+ years of UAE market experience</p>
-              </div>
+              <p className="absolute bottom-4 left-4 text-white text-xl font-bold">Strategic Planning</p>
             </div>
-
-            <div className="relative rounded-2xl overflow-hidden h-64 group">
+            
+            <div className="relative rounded-2xl overflow-hidden h-64 group cursor-pointer">
               <img 
-                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop"
-                alt="Success Stories"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&auto=format&fit=crop"
+                alt="Creative Studio"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-              <div className="absolute bottom-6 left-6">
-                <p className="text-white text-2xl font-bold mb-2">Proven Results</p>
-                <p className="text-gray-300">150+ successful transformations</p>
-              </div>
+              <p className="absolute bottom-4 left-4 text-white text-xl font-bold">Creative Excellence</p>
+            </div>
+            
+            <div className="relative rounded-2xl overflow-hidden h-64 group cursor-pointer">
+              <img 
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop"
+                alt="Analytics Dashboard"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+              <p className="absolute bottom-4 left-4 text-white text-xl font-bold">Data-Driven Results</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* CTA Section with Background Image */}
-      <div className="py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* CTA Section */}
+      <div className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-            <div className="absolute inset-0">
-              <img 
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&auto=format&fit=crop"
-                alt="Strategy Meeting"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0d2438]/95 to-[#1a3a52]/95"></div>
-            </div>
-            
-            <div className="relative z-10 p-12 lg:p-16 text-center">
-              <div className="max-w-3xl mx-auto">
+            <img 
+              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&auto=format&fit=crop"
+              alt="Campaign Success"
+              className="w-full h-96 object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0d2438]/95 to-[#1a3a52]/95"></div>
+            <div className="absolute inset-0 flex items-center justify-center text-center p-8">
+              <div>
                 <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                  Ready to Transform Your Business?
+                  Ready to Launch Your Next Big Campaign?
                 </h2>
-                <p className="text-xl text-gray-200 mb-10">
-                  Get a complimentary strategy session and discover growth opportunities tailored for your business
+                <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                  Get a free campaign strategy session and discover how we can amplify your brand
                 </p>
-                <button onClick={() => setShowConsultationForm(true)} className="px-10 py-5 bg-gradient-to-r from-[#4a90b8] to-[#6bb3d8] hover:from-[#6bb3d8] hover:to-[#4a90b8] text-white rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
-                  Book Your Free Consultation
+                <button className="px-10 py-4 bg-gradient-to-r from-[#4a90b8] to-[#6bb3d8] hover:from-[#6bb3d8] hover:to-[#4a90b8] text-white rounded-xl font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
+                  Get Free Strategy Session
                 </button>
               </div>
             </div>
@@ -377,47 +376,20 @@ const BusinessManagementConsulting = () => {
         </div>
       </div>
 
-      {/* Consultation Form Modal */}
-      {showConsultationForm && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-md w-full shadow-2xl relative">
+      {/* Video Modal */}
+      {showVideo && (
+        <div className="fixed inset-0 bg-black/[0.5] backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="relative max-w-5xl w-full">
             <button
-              onClick={() => setShowConsultationForm(false)}
-              className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-[#4a90b8] to-[#6bb3d8] rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-xl"
+              onClick={() => setShowVideo(false)}
+              className="absolute -top-12 right-0 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-all"
             >
-              <X className="w-6 h-6 text-white" />
+              <X className="w-6 h-6 text-gray-900" />
             </button>
-            
-            <div className="p-8">
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">Request Consultation</h3>
-              <p className="text-gray-600 mb-6">Fill out the form below and we'll get back to you within 24 hours</p>
-              
-              <div className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#4a90b8] focus:outline-none transition-colors"
-                />
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#4a90b8] focus:outline-none transition-colors"
-                />
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#4a90b8] focus:outline-none transition-colors"
-                />
-                <textarea
-                  placeholder="Tell us about your business needs..."
-                  rows="4"
-                  className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#4a90b8] focus:outline-none transition-colors resize-none"
-                ></textarea>
-                <button className="w-full bg-gradient-to-r from-[#4a90b8] to-[#6bb3d8] text-white py-4 rounded-lg font-semibold hover:shadow-xl transition-all hover:scale-105">
-                  Submit Request
-                </button>
-              </div>
+            <div className="bg-white rounded-2xl overflow-hidden shadow-2xl aspect-video flex items-center justify-center">
+              <iframe className='w-full h-full' src="https://www.youtube.com/embed/yHGRBTZI6w0" title="The Art of Marketing — for Good | Raja Rajamannar | TED" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
+            
           </div>
         </div>
       )}
@@ -425,4 +397,4 @@ const BusinessManagementConsulting = () => {
   )
 }
 
-export default BusinessManagementConsulting
+export default MarketingBrandingAdvertising
